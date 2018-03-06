@@ -21,8 +21,10 @@
     Usage: lid [-ign?] [-i|--interactive] [-g|--group] [-n|--onlynames] [-?|--help]
             [--usage] [OPTION...] user
 
-    正常使用经过测试lid --version 4.6  如果lid --version都不能正常执行说明版本不对，更正版本后即可解决
-
+    a.正常使用经过测试lid --version 4.6  如果lid --version都不能正常执行说明版本不对，更正版本后即可解决
+    b.在~/.vim/bundle/ex-gsearch/autoload/exgsearch.vim文件中增加lid命令调用的绝对路径（因为配置时非root用户，故此产生了这个问题）
+        eg: ~/.vim/bundle/ex-gsearch/autoload/exgsearch.vim:226行， "let cmd = 'lid --result=grep -i -f"' . id_path . '" ' . a:method . ' ' . a:pattern" 改
+        为"let cmd = '/lid bin文件绝对路径/lid --result=grep -i -f"' . id_path . '" ' . a:method . ' ' . a:pattern"
 
 ## 4.函数列表
 
