@@ -506,26 +506,7 @@ endif
 
 " vim:ts=4:sw=4:sts=4 et fdm=marker:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-" au:MeloGee 2017-04-04 enjoy!
+" AU:MeloJi 2017-04-04 enjoy!
 " /////////////////////////// user settings/////////////////
 set expandtab
 set tabstop=4
@@ -559,13 +540,15 @@ set t_Co=256
 
 "函数设置
 "hilight function name
-autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+autocmd BufNewFile,BufRead * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+autocmd BufNewFile,BufRead * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+
 "highlight c function name
 "autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "::\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 "autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "::\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+
 "highlight c class function
-autocmd BufNewFile,BufRead,BufWritePost * : syntax match cClassFunc "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
+autocmd BufNewFile,BufRead * : syntax match cClassFunc "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
 
 "关键词设置
 hi cfunctions            ctermfg=27  cterm=bold                  "函数
@@ -644,3 +627,10 @@ hi Folded                ctermfg=67  ctermbg=16
 hi Function              ctermfg=118
 hi Identifier            ctermfg=208
 hi Ignore                ctermfg=244 ctermbg=232
+
+" 解决中文乱码问题， 终端iterm2保持utf-8即可
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+
+set helplang=cn

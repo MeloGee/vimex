@@ -648,7 +648,7 @@ endfunction
 " exconfig#gen_sh_update_idutils {{{
 let s:default_id_file_filter = [
     \ 'h', 'h++', 'h.in', 'H', 'hh', 'hp', 'hpp', 'hxx', 'inl',
-    \ 'c', 'C', 'cc', 'cp', 'cpp', 'cxx',
+    \ 'go', 'c', 'C', 'cc', 'cp', 'cpp', 'cxx',
     \ 'cs',
     \ 'm',
     \ 'hlsl', 'vsh', 'psh', 'fx', 'fxh', 'cg', 'shd',

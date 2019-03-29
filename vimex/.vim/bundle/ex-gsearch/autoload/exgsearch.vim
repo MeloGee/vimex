@@ -222,13 +222,16 @@ function exgsearch#search( pattern, method )
 
     " start search process
     if ignore_case
-        echomsg 'search ' . a:pattern . '...(case insensitive)'
-        let cmd = 'lid --result=grep -i -f"' . id_path . '" ' . a:method . ' ' . a:pattern
+        "echomsg 'search ' . a:pattern . '...(case insensitive)'
+        let cmd = '~/.vim/base/idutils/bin/lid --result=grep -i -f"' . id_path . '" ' . a:method . ' ' . a:pattern
+        echomsg 'cmd|' . cmd . '|insensitive'
     else
-        echomsg 'search ' . a:pattern . '...(case sensitive)'
-        let cmd = 'lid --result=grep -f"' . id_path . '" ' . a:method . ' ' . a:pattern
+        "echomsg 'search ' . a:pattern . '...(case sensitive)'
+        let cmd = '~/.vim/base/idutils/bin/lid --result=grep -f"' . id_path . '" ' . a:method . ' ' . a:pattern
+        echomsg 'cmd|' . cmd . '|sensitive'
     endif
     let result = system(cmd)
+    " echomsg 'result echo:' . result . '|' " unkonw option 从这里产生
 
     " open the global search window
     call exgsearch#open_window()

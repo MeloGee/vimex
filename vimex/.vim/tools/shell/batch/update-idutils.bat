@@ -4,7 +4,7 @@ echo Creating ID...
 
 set MKID_CMD="%TOOLS%\windows\mkid.exe"
 if not exist %MKID_CMD% (
-    set MKID_CMD=mkid
+    set MKID_CMD=~/.vim/base/idutils/bin/mkid
 )
 
 rem try to use auto-gen id language map
