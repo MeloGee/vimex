@@ -1,0 +1,27 @@
+This is the file .../info/dir, which contains the
+topmost node of the Info hierarchy, called (dir)Top.
+The first time you invoke Info you start off looking at this node.
+
+File: dir,	Node: Top	This is the top of the INFO tree
+
+  This (the Directory node) gives a menu of major topics.
+  Typing "q" exits, "?" lists all Info commands, "d" returns here,
+  "h" gives a primer for first-timers,
+  "mEmacs<Return>" visits the Emacs manual, etc.
+
+  In Emacs, you can click mouse button 2 on a menu item or cross reference
+  to select it.
+
+* Menu:
+
+Text creation and manipulation
+* fid: (idutils)fid invocation. Listing a file's tokens.
+* fnid: (idutils)fnid invocation.
+                                Looking up file names.
+* gid: (idutils)gid invocation. Token-based grep.
+* ID utilities: (idutils).      Indexing and searching utilities.
+* lid: (idutils)lid invocation. Matching words and patterns.
+* mkid: (idutils)mkid invocation.
+                                Creating an ID database.
+* xtokid: (idutils)xtokid invocation.
+                                Testing mkid scanners.
