@@ -649,7 +649,7 @@ endfunction
 let s:default_id_file_filter = [
     \ 'h', 'h++', 'h.in', 'H', 'hh', 'hp', 'hpp', 'hxx', 'inl',
     \ 'go', 'c', 'C', 'cc', 'cp', 'cpp', 'cxx',
-    \ 'cs',
+    \ 'cs', 'java',
     \ 'm',
     \ 'hlsl', 'vsh', 'psh', 'fx', 'fxh', 'cg', 'shd',
     \ 'asm', 'ASM', 's', 'S',
