@@ -455,9 +455,9 @@ endfunction
 " exconfig#gen_sh_update_ctags {{{
 function exconfig#gen_sh_update_ctags(path)
     " get ctags cmd
-    let ctags_cmd = 'ctags'
-    if executable('ctags')
-        let ctags_cmd = 'ctags'
+    let ctags_cmd = '~/.vim/base/ctags/bin/ctags'
+    if executable('~/.vim/base/ctags/bin/ctags')
+        let ctags_cmd = '~/.vim/base/ctags/bin/ctags'
     elseif executable('exuberant-ctags')
         " On Debian Linux, exuberant ctags is installed as exuberant-ctags
         let ctags_cmd = 'exuberant-ctags'
