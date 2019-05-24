@@ -540,15 +540,15 @@ set t_Co=256
 
 "函数设置
 "hilight function name
-autocmd BufNewFile,BufRead * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-autocmd BufNewFile,BufRead * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 
 "highlight c function name
 "autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "::\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 "autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "::\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 
 "highlight c class function
-autocmd BufNewFile,BufRead * : syntax match cClassFunc "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
+autocmd BufNewFile,BufRead,BufWritePost * : syntax match cClassFunc "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
 
 "关键词设置
 hi cfunctions            ctermfg=27  cterm=bold                  "函数
