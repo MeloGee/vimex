@@ -111,20 +111,6 @@ filetype plugin indent on " required
 syntax on " required
 
 "/////////////////////////////////////////////////////////////////////////////
-" Default colorscheme setup
-"/////////////////////////////////////////////////////////////////////////////
-
-if has('gui_running')
-    set background=dark
-else
-    set background=dark
-    set t_Co=256 " make sure our terminal use 256 color
-    let g:solarized_termcolors = 256
-endif
-"colorscheme solarized
-"colorscheme exlightgray
-
-"/////////////////////////////////////////////////////////////////////////////
 " General
 "/////////////////////////////////////////////////////////////////////////////
 
@@ -482,13 +468,6 @@ vnoremap > >gv
 " map Up & Down to gj & gk, helpful for wrap text edit
 noremap <Up> gk
 noremap <Down> gj
-
-" TODO: I should write a better one, make it as plugin exvim/swapword
-" VimTip 329: A map for swapping words
-" http://vim.sourceforge.net/tip_view.php?tip_id=
-" Then when you put the cursor on or in a word, press "\sw", and
-" the word will be swapped with the next word.  The words may
-" even be separated by punctuation (such as "abc = def").
 nnoremap <silent> <leader>sw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<cr><c-o>
 
 "/////////////////////////////////////////////////////////////////////////////
@@ -503,18 +482,15 @@ endif
 if filereadable(expand(vimrc_local_path))
     exec 'source ' . fnameescape(vimrc_local_path)
 endif
-
 " vim:ts=4:sw=4:sts=4 et fdm=marker:
 
-" AU:MeloJi 2017-04-04 enjoy!
-" /////////////////////////// user settings/////////////////
+" base tabs
 set expandtab
 set tabstop=4
 set shiftwidth=4
-
 "let g:auto_save = 1  " enable AutoSave on Vim startup
-"colorscheme mycolors "happy_hacking srcery moriarty lucario
 
+" xterm info setting
 syntax on
 if &term =~ "xterm"
   if has("terminfo")
@@ -528,8 +504,40 @@ if &term =~ "xterm"
   endif
 endif
 
+"/////////////////////////////////////////////////////////////////////////////
+" 至此，以上为整套配置的系统配置，不建议改动。
+" 以下，为用户配置，可根据需求自由改动，如主题配色/中文编码等...
+"/////////////////////////////////////////////////////////////////////////////
+"
+"                    ,----------------,              ,---------,
+"                ,-----------------------,          ,"        ,"|
+"              ,"                      ,"|        ,"        ,"  |
+"             +-----------------------+  |      ,"        ,"    |
+"             |  .-----------------.  |  |     +---------+      |
+"             |  |                 |  |  |     | -==----'|      |
+"             |  |  PornHub...     |  |  |     |         |      |
+"             |  |                 |  |  |/----|`---=    |      |
+"             |  |  Oh, yes!       |  |  |   ,/|==== ooo |      ;
+"             |  |                 |  |  |  // |(((([Orz]|    ,"
+"             |  `-----------------'  |," .;'| |((((     |  ,"
+"             +-----------------------+  ;;  | |         |,"
+"                /_)______________(_/  //'   | +---------+
+"           ___________________________/___  `,
+"          /  oooooooooooooooo  .o.  oooo /,   \,"-----------
+"         / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,"
+"        /_==__==========__==_ooo__ooo=_/'   /___________,"
+"
+"        Written By MeloJi 2017-04-04
+"/////////////////////////////////////////////////////////////////////////////
 
-"光标聚焦线设置
+" 主题配色设置
+set background=dark
+" iterm2 should select the solarized scheme.
+"let g:solarized_termcolors = 16
+"colorscheme solarized
+colorscheme mycolors
+
+" 光标聚焦线设置
 set cursorline
 hi Cursorline ctermbg=235 cterm=underline
 set cursorcolumn
@@ -538,99 +546,23 @@ hi CursorColumn ctermbg=235
 " must be at last
 set t_Co=256
 
-"函数设置
-"hilight function name
+" 函数高亮设置
+" hilight function name
 autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 
-"highlight c function name
+" highlight c function name
 "autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "::\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 "autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "::\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 
-"highlight c class function
+" highlight c class function
 autocmd BufNewFile,BufRead,BufWritePost * : syntax match cClassFunc "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
-
-"关键词设置
-hi cfunctions            ctermfg=27  cterm=bold                  "函数
-hi cClassFunc            ctermfg=202 cterm=bold                  "C class function
-hi Type                  ctermfg=202 cterm=bold                  "变量
-hi Normal                ctermfg=248 guibg=#292099               "普通文字颜色以及背景色
-hi Structure             ctermfg=161                             "结构体 类 namespace class struct
-hi Macro                 ctermfg=118                             "宏
-hi PreCondit             ctermfg=118                             "预处理
-hi Comment               ctermfg=29                              "注释
-hi Todo                  ctermfg=243 ctermbg=190                 "TODO
-hi Typedef               ctermfg=81                              "typedef
-hi Statement             ctermfg=161                             "return import package等
-hi StatusLine            ctermfg=238 ctermbg=253                 "状态栏
-hi StatusLineNC          ctermfg=244 ctermbg=232
-
-"变量右值颜色设置
-hi Boolean               ctermfg=135
-hi Float                 ctermfg=135                              "浮点型
-hi Character             ctermfg=157                              "字符
-hi Number                ctermfg=135                              "数字
-hi String                ctermfg=157                              "字符串
-hi Conditional           ctermfg=161 cterm=bold                   "条件语句
-hi Constant              ctermfg=161 cterm=bold
-hi Cursor                ctermfg=16  ctermbg=253
-hi Debug                 ctermfg=225 cterm=bold
-hi Define                ctermfg=81
-hi Delimiter             ctermfg=241
-hi Exception             ctermfg=124 cterm=bold                   "try catch 异常处理
-hi StorageClass          ctermfg=124 cterm=bold                   "const static关键字颜色
-hi Operator              ctermfg=161                              "C++操作符重载
-hi Keyword               ctermfg=202 cterm=bold
-
-"功能设置
-hi Search                ctermfg=15  cterm=bold  ctermbg=66       "关键词搜索颜色设置
-hi Pmenu                 ctermfg=88  cterm=bold  ctermbg=15       "自动补全框颜色
-hi PmenuSel              ctermfg=88  cterm=bold  ctermbg=45       "自动补全框颜色
-hi PmenuSbar             ctermbg=88  cterm=bold                   "自动补全框颜色
-hi PmenuThumb            ctermfg=81
-
-"vim diff
-hi DiffAdd               ctermbg=24
-hi DiffChange            ctermfg=181 ctermbg=239
-hi DiffDelete            ctermfg=162 ctermbg=53
-hi DiffText              ctermbg=102 cterm=bold
-
-" 更多设置
-hi Tag                   ctermfg=161
-hi Title                 ctermfg=166
-hi Underlined            ctermfg=244 cterm=underline
-hi VertSplit             ctermfg=244 ctermbg=232 cterm=bold
-hi VisualNOS             ctermbg=238
-hi Visual                ctermbg=235
-hi WarningMsg            ctermfg=231 ctermbg=238 cterm=bold
-hi WildMenu              ctermfg=81  ctermbg=16
-hi LineNr                ctermfg=250 ctermbg=234
-hi NonText               ctermfg=250 ctermbg=234
-hi SpecialKey            ctermfg=178
-hi Special               ctermfg=178                              "%d等特殊符号
-hi SpecialChar           ctermfg=178 cterm=bold
-hi SignColumn            ctermfg=118 ctermbg=235
-hi SpecialComment        ctermfg=245 cterm=bold
-hi PreCondit             ctermfg=118 cterm=bold
-hi PreProc               ctermfg=118
-hi Question              ctermfg=81
-hi Repeat                ctermfg=161 cterm=bold
-hi MatchParen            ctermfg=16  ctermbg=208 cterm=bold
-hi ModeMsg               ctermfg=229
-hi MoreMsg               ctermfg=229
-hi Label                 ctermfg=229 cterm=none
-hi Directory             ctermfg=118 cterm=bold
-hi Error                 ctermfg=219 ctermbg=89
-hi ErrorMsg              ctermfg=199 ctermbg=16  cterm=bold
-hi FoldColumn            ctermfg=67  ctermbg=16
-hi Folded                ctermfg=67  ctermbg=16
-hi Function              ctermfg=118
-hi Identifier            ctermfg=208
-hi Ignore                ctermfg=244 ctermbg=232
 
 " 解决中文乱码问题， 终端iterm2保持utf-8即可
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
-
 set helplang=cn
+
+" 系统函数跳转
+"set tags+=~/.vim/systags
