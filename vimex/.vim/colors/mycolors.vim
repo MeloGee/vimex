@@ -1,6 +1,3 @@
-" Vim Code Dark (color scheme)
-" https://github.com/tomasiser/vim-code-dark
-
 scriptencoding utf-8
 
 set background=dark
@@ -10,7 +7,6 @@ if exists("syntax_on")
 endif
 let g:colors_name="mycolors"
 
-" Highlighting function (inspiration from https://github.com/chriskempson/base16-vim)
 if &t_Co >= 256
     let g:mycolors_term256=1
 elseif !exists("g:mycolors_term256")
@@ -86,7 +82,7 @@ let s:cdSplitLight = {'gui': '#898989', 'cterm': s:cterm04, 'cterm256': '245'}
 let s:cdSplitDark = {'gui': '#444444', 'cterm': s:cterm03, 'cterm256': '238'}
 let s:cdSplitThumb = {'gui': '#424242', 'cterm': s:cterm04, 'cterm256': '238'}
 
-let s:cdCursorDarkDark = {'gui': '#222222', 'cterm': s:cterm01, 'cterm256': '235'}
+let s:cdCursorDarkDark = {'gui': '#222222', 'cterm': s:cterm01, 'cterm256': '237'}
 let s:cdCursorDark = {'gui': '#51504F', 'cterm': s:cterm03, 'cterm256': '239'}
 let s:cdCursorLight = {'gui': '#AEAFAD', 'cterm': s:cterm04, 'cterm256': '145'}
 let s:cdSelection = {'gui': '#264F78', 'cterm': s:cterm03, 'cterm256': '24'}
@@ -99,7 +95,7 @@ let s:cdDiffGreenDark = {'gui': '#373D29', 'cterm': s:cterm0B, 'cterm256': '237'
 let s:cdDiffGreenLight = {'gui': '#4B5632', 'cterm': s:cterm09, 'cterm256': '58'}
 
 let s:cdSearchCurrent = {'gui': '#49545F', 'cterm': s:cterm09, 'cterm256': '236'}
-let s:cdSearch = {'gui': '#4C4E50', 'cterm': s:cterm0A, 'cterm256': '236'}
+let s:cdSearch = {'gui': '#4C4E50', 'cterm': s:cterm0A, 'cterm256': '202'}
 
 " Syntax colors:
 

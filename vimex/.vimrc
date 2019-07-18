@@ -537,11 +537,9 @@ set background=dark
 "colorscheme solarized
 colorscheme mycolors
 
-" 光标聚焦线设置
+" 光标聚焦线开启
 set cursorline
-hi Cursorline ctermbg=235 cterm=underline
 set cursorcolumn
-hi CursorColumn ctermbg=235
 
 " must be at last
 set t_Co=256
@@ -558,7 +556,7 @@ autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_]
 " highlight c class function
 autocmd BufNewFile,BufRead,BufWritePost * : syntax match cClassFunc "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
 
-" 部分高亮颜色微调设置(下载的其他的vim配色文件不合胃口，可在此进行微调设置)
+" 部分高亮颜色微调设置
 " 关键词设置
 hi cfunctions            ctermfg=187  cterm=bold                  "函数
 hi cClassFunc            ctermfg=187 cterm=bold                   "C class function
@@ -590,6 +588,10 @@ hi cClassFunc            ctermfg=187 cterm=bold                   "C class funct
 "hi StorageClass          ctermfg=124 cterm=bold                   "const static关键字颜色
 "hi Operator              ctermfg=161                              "C++操作符重载
 "hi Keyword               ctermfg=202 cterm=bold
+
+" 光标聚焦线设置
+"hi Cursorline ctermbg=237 cterm=underline
+"hi CursorColumn ctermbg=237
 
 " 功能设置
 "hi Search                ctermfg=15  cterm=bold  ctermbg=66       "关键词搜索颜色设置
@@ -645,3 +647,5 @@ set helplang=cn
 
 " 系统函数跳转
 "set tags+=~/.vim/systags
+
+let g:Tlist_Ctags_Cmd='/home/meloji/soft/ctags/ctags_5.8/bin/ctags'
