@@ -539,9 +539,9 @@ colorscheme mycolors
 
 " 光标聚焦线设置
 set cursorline
-hi Cursorline ctermbg=235 cterm=underline
+hi Cursorline ctermbg=200 cterm=underline
 set cursorcolumn
-hi CursorColumn ctermbg=235
+hi CursorColumn ctermbg=200
 
 " must be at last
 set t_Co=256
@@ -558,13 +558,13 @@ autocmd BufNewFile,BufRead,BufWritePost * : syntax match cfunctions "\<[a-zA-Z_]
 " highlight c class function
 autocmd BufNewFile,BufRead,BufWritePost * : syntax match cClassFunc "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
 
-" 部分高亮颜色微调设置(下载的其他的vim配色文件不合胃口，可在此进行微调设置)
+" 部分高亮颜色微调设置
 " 关键词设置
-hi cfunctions            ctermfg=187  cterm=bold                  "函数
-hi cClassFunc            ctermfg=187 cterm=bold                   "C class function
+hi cfunctions            ctermfg=75  cterm=bold                  "函数
+hi cClassFunc            ctermfg=75 cterm=bold                   "C class function
 "hi Type                  ctermfg=202 cterm=bold                  "变量
 "hi Normal                ctermfg=248 guibg=#292099               "普通文字颜色以及背景色
-"hi Structure             ctermfg=161                             "结构体 类 namespace class struct
+hi Structure             ctermfg=161                             "结构体 类 namespace class struct
 "hi Macro                 ctermfg=118                             "宏
 "hi PreCondit             ctermfg=118                             "预处理
 "hi Comment               ctermfg=29                              "注释
@@ -599,10 +599,10 @@ hi cClassFunc            ctermfg=187 cterm=bold                   "C class funct
 "hi PmenuThumb            ctermfg=81
 
 " vim diff
-"hi DiffAdd               ctermbg=24
-"hi DiffChange            ctermfg=181 ctermbg=239
-"hi DiffDelete            ctermfg=162 ctermbg=53
-"hi DiffText              ctermbg=102 cterm=bold
+hi DiffAdd               ctermbg=24
+hi DiffChange            ctermfg=181 ctermbg=239
+hi DiffDelete            ctermfg=162 ctermbg=53
+hi DiffText              ctermbg=102 cterm=bold
 
 " 更多设置
 "hi Tag                   ctermfg=161
@@ -645,3 +645,5 @@ set helplang=cn
 
 " 系统函数跳转
 "set tags+=~/.vim/systags
+
+let g:Tlist_Ctags_Cmd='/home/meloji/soft/ctags/ctags_5.8/bin/ctags'
