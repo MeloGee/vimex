@@ -647,5 +647,3 @@ set helplang=cn
 
 " 系统函数跳转
 "set tags+=~/.vim/systags
-
-let g:Tlist_Ctags_Cmd='/home/meloji/soft/ctags/ctags_5.8/bin/ctags'
