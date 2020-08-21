@@ -532,7 +532,6 @@ endif
 
 " 主题配色设置
 set background=dark
-" iterm2 should select the solarized scheme.
 "let g:solarized_termcolors = 16
 "colorscheme solarized
 colorscheme mycolors
@@ -647,3 +646,7 @@ set helplang=cn
 
 " 系统函数跳转
 "set tags+=~/.vim/systags
+
+set ts=4
+set expandtab
+set autoindent
