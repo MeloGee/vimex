@@ -36,6 +36,9 @@
 * 以往的版本中出现了mkid、lid命令无法正常工作的问题，目前已经在插件中将命令路径填充完整，保证非root权限下配置也可正常工作；
 * 注意.bashrc .bash_profile两个文件，建议以追加的形式加到你自己的配置中，避免直接覆盖!
 
+# VIM版本兼容
+* vim-7.4
+
 # 关于exvim
 * 很多插件的支持基于exvim，感谢整理分享，项目地址是：https://github.com/exvim/main, 赞!
 * 关于全局搜索、函数列表、跳转等操作可以参见exvim docs, 再次感谢exvim作者。
